@@ -21,7 +21,7 @@
                (mapv #(-> % str parse-long)
                      line)))))
 
-(def input (slurp "input/2022/08"))
+(def input (slurp "input/08"))
 
 (def puzzle (parse input #_ example))
 

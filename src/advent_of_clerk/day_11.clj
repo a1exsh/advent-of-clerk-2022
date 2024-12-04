@@ -35,7 +35,7 @@ Monkey 3:
     If true: throw to monkey 0
     If false: throw to monkey 1"))
 
-(def input (slurp "input/2022/11"))
+(def input (slurp "input/11"))
 
 (def Q PersistentQueue/EMPTY)
 

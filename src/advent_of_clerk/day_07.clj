@@ -29,7 +29,7 @@ $ ls
 5626152 d.ext
 7214296 k")
 
-(def input (slurp "input/2022/07"))
+(def input (slurp "input/07"))
 
 ;; We will represent the input during parsing as a map of `:dir` — the path to
 ;; current directory as a vector of directory names; and `"/"` — the root of

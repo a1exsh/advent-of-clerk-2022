@@ -31,7 +31,7 @@
 [1,[2,[3,[4,[5,6,7]]]],8,9]
 [1,[2,[3,[4,[5,6,0]]]],8,9]"))
 
-(def input (slurp "input/2022/13"))
+(def input (slurp "input/13"))
 
 (defn parse [s]
   (->> (string/split s #"\n\n")

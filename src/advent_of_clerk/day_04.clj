@@ -12,7 +12,7 @@
 6-6,4-6
 2-6,4-8")
 
-(def input (slurp "input/2022/04"))
+(def input (slurp "input/04"))
 
 (def lines (string/split-lines input))
 

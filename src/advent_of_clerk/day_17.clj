@@ -8,7 +8,7 @@
 
 (def example ">>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>")
 
-(def input (slurp "input/2022/17"))
+(def input (slurp "input/17"))
 
 (def puzzle example #_ input)
 

@@ -5,7 +5,7 @@
             [clojure.string :as string]))
 
 ;; ## Parsing the input
-(def input (slurp "input/2022/03"))
+(def input (slurp "input/03"))
 
 #_(def input "vJrwpWtwJgWrhcsFMMfFFhFp
 jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL

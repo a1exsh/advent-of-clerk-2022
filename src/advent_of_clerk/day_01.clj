@@ -4,7 +4,7 @@
             [clojure.string :as string]))
 
 ;; ## Parsing the input
-(def input (slurp "input/2022/01"))
+(def input (slurp "input/01"))
 
 (def lines (string/split-lines input))
 

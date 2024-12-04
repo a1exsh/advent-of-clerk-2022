@@ -14,7 +14,7 @@ move 3 from 1 to 3
 move 2 from 2 to 1
 move 1 from 1 to 2")
 
-(def input (slurp "input/2022/05"))
+(def input (slurp "input/05"))
 
 ;;
 ;; The stacks description is a number of lines, each of the same length $l$.

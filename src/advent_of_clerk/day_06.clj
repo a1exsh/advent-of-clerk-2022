@@ -5,7 +5,7 @@
 ;; ## The input
 (def example "mjqjpqmgbljsphdztnvjfqwrcgsmlb")
 
-(def input (slurp "input/2022/06"))
+(def input (slurp "input/06"))
 
 ;; ## Part I
 ;; Life is easy when you know exactly the right function ;)

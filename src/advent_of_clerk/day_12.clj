@@ -14,7 +14,7 @@ accszExk
 acctuvwj
 abdefghi"))
 
-(def input (slurp "input/2022/12"))
+(def input (slurp "input/12"))
 
 (defrecord Field [width height arr])
 

@@ -153,7 +153,7 @@ noop
 noop
 noop"))
 
-(def input (slurp "input/2022/10"))
+(def input (slurp "input/10"))
 
 (defn parse [s]
   (->> s
