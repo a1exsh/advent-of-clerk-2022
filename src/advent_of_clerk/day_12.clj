@@ -183,30 +183,23 @@ abdefghi"))
                  0
                  (-> p count (* 191.0) (/ (count paths)) (+ 64) int)))))))
 
-(defn slider-viewer [max-value]
-  {:transform-fn (comp (clerk/update-val symbol)
-                       clerk/mark-presented)
-   :render-fn `(fn [x]
-                 [:input {:type :range
-                          :value (:counter @@(resolve x))
-                          :min 0
-                          :max ~max-value
-                          :on-change #(swap! @(resolve x)
-                                             assoc
-                                             :counter
-                                             (int (.. % -target -value)))}])})
+(def frames-viewer
+  {:render-fn '(fn [rendered-frames]
+                 (reagent.core/with-let [frame* (reagent.core/atom 0)]
+                   [:div
+                    [:input {:type :range
+                             :value @frame*
+                             :min 0
+                             :max (dec (count rendered-frames))
+                             :on-change #(reset! frame*
+                                                 (int (.. % -target -value)))}]
+                    [:p "Frame: " @frame*]
+                    [:img {:src (-> (get rendered-frames @frame*)
+                                    :nextjournal/value
+                                    nextjournal.clerk.render/url-for)}]]))})
 
-^::clerk/sync
-(defonce step* (atom {:counter shortest-path-len}))
-#_(reset! step* {:counter shortest-path-len})
-
-^{::clerk/viewer (slider-viewer (dec total-steps))}
-`step*
-
-(def step-number (:counter @step*))
-(def step-to-render (steps step-number))
-
-(render-step step-to-render)
+(clerk/with-viewer frames-viewer
+  (mapv render-step steps))
 
 ;; ## Part II
 (defn next-step2-xys [height-map path-map xy]
@@ -296,14 +289,5 @@ total-steps2
                      0
                      (-> p count (* 191.0) (/ (count paths)) (+ 64) int)))))))))
 
-^::clerk/sync
-(defonce step2* (atom {:counter shortest-path-len2}))
-#_(reset! step2* {:counter shortest-path-len2})
-
-^{::clerk/viewer (slider-viewer (dec (count steps2)))}
-`step2*
-
-(def step2-number (:counter @step2*))
-(def step2-to-render (steps2 step2-number))
-
-(render-step2 step2-to-render)
+(clerk/with-viewer frames-viewer
+  (mapv render-step2 steps2))
